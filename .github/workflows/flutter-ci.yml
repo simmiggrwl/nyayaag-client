@@ -19,7 +19,7 @@ jobs:
       - run: flutter build web --release
       - run: |
           cd build/web
-          git inite 
+          git init
           git config --global user.email akashjaiswal3846@gmail.com
           git config --global user.name Akash Jaiswal
           git status
