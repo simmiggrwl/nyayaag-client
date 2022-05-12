@@ -24,7 +24,9 @@ class NyayaagApp extends StatelessWidget {
         '/home': (context) =>
             const HomePage(title: 'Nyayaag - Voice of Justice'),
         '/citizen/login': (context) =>
-            const LoginPage(title: 'Nyayaa - Citizen Login'),
+            const LoginPage(title: 'Nyayaag - Citizen Login'),
+        '/advocate/login': (context) =>
+            const LoginPage(title: 'Nyayaag - Advocate Login'),
         '/advocate/login': (context) =>
             const LoginPage(title: 'Nyayaag - Advocate Login'),
         '/litigationcases': (context) => const LitigationCasesPage(),
