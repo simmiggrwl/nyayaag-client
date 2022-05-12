@@ -20,7 +20,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NyayaagAppBarWidget.getAppBar(),
+      appBar: NyayaagAppBarWidget(
+        appBar: AppBar(),
+      ),
       body: Container(
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 176, 198, 146)),
@@ -122,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
-      bottomSheet: NyayaagFooterWidget.getFooter(),
+      bottomSheet: const NyayaagFooterWidget(),
     );
   }
 }

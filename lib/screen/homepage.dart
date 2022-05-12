@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
+import 'package:nyayaag_client/screen/loginpage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -15,7 +16,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NyayaagAppBarWidget.getAppBar(),
+      appBar: NyayaagAppBarWidget(
+        appBar: AppBar(),
+      ),
       body: Container(
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 176, 198, 146)),
@@ -67,7 +70,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          debugPrint('Received click');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage(
+                                    title: 'Nyayaag - Advocate Login')),
+                          );
                         },
                         child: const Text('Register'),
                       ),
@@ -93,7 +101,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          debugPrint('Received click');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage(
+                                    title: 'Nyayaag - Citizen Login')),
+                          );
                         },
                         child: const Text('Register'),
                       ),
@@ -116,7 +129,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomSheet: NyayaagFooterWidget.getFooter(),
+      bottomSheet: const NyayaagFooterWidget(),
     );
   }
 }

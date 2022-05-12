@@ -17,8 +17,10 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
   Widget build(context) {
     return SafeArea(
       child: Scaffold(
-        appBar: NyayaagAppBarWidget.getAppBar(),
-        backgroundColor: Color.fromARGB(255, 216, 240, 203),
+        appBar: NyayaagAppBarWidget(
+          appBar: AppBar(),
+        ),
+        backgroundColor: const Color.fromARGB(255, 216, 240, 203),
         body: SingleChildScrollView(
           child: Responsive(
             mobile: _mobileBody(),
@@ -26,7 +28,7 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
             desktop: _desktopBody(),
           ),
         ),
-        bottomSheet: NyayaagFooterWidget.getFooter(),
+        bottomSheet: const NyayaagFooterWidget(),
       ),
     );
   }
@@ -263,7 +265,7 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
                   style: TextStyle(fontSize: 20.0)),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF46920F),
+                  primary: const Color(0xFF46920F),
                   padding: const EdgeInsets.all(20.0))),
           const SizedBox(height: 50),
           const Divider(
@@ -549,7 +551,7 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
                   style: TextStyle(fontSize: 20.0)),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF46920F),
+                  primary: const Color(0xFF46920F),
                   padding: const EdgeInsets.all(20.0))),
           const SizedBox(height: 50),
           const Divider(

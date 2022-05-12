@@ -15,7 +15,9 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
   Widget build(context) {
     return SafeArea(
       child: Scaffold(
-        appBar: NyayaagAppBarWidget.getAppBar(),
+        appBar: NyayaagAppBarWidget(
+        appBar: AppBar(),
+      ),
         backgroundColor: Color.fromARGB(255, 216, 240, 203),
         body: SingleChildScrollView(
           child: Responsive(
@@ -24,7 +26,7 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
             desktop: _desktopBody(),
           ),
         ),
-        bottomSheet: NyayaagFooterWidget.getFooter(),
+        bottomSheet: const NyayaagFooterWidget(),
       ),
     );
   }
