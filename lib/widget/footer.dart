@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+class NyayaagFooterWidget extends StatelessWidget {
+  const NyayaagFooterWidget({Key? key}) : super(key: key);
 
-class NyayaagFooterWidget {
-  static getFooter() {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(color: Colors.black),
       child: Padding(

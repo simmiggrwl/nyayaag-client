@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:nyayaag_client/screen/loginpage.dart';
+import 'package:nyayaag_client/screen/homepage.dart';
 
-class NyayaagAppBarWidget {
-  static getAppBar() {
+class NyayaagAppBarWidget extends StatelessWidget
+    implements PreferredSizeWidget {
+  final AppBar appBar;
+  const NyayaagAppBarWidget({Key? key, required this.appBar}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: 80,
       title: SizedBox(
@@ -13,7 +20,12 @@ class NyayaagAppBarWidget {
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      const HomePage(title: 'Nyayaag - Voice of Justice')),
+            );
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -73,7 +85,12 @@ class NyayaagAppBarWidget {
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      const LoginPage(title: 'Nyayaag - Citizen Login')),
+            );
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -85,7 +102,12 @@ class NyayaagAppBarWidget {
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      const LoginPage(title: 'Nyayaag - Citizen Login')),
+            );
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -98,4 +120,7 @@ class NyayaagAppBarWidget {
       ],
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(appBar.preferredSize.height);
 }
