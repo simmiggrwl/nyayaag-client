@@ -16,9 +16,9 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
     return SafeArea(
       child: Scaffold(
         appBar: NyayaagAppBarWidget(
-        appBar: AppBar(),
-      ),
-        backgroundColor: Color.fromARGB(255, 216, 240, 203),
+          appBar: AppBar(),
+        ),
+        backgroundColor: Color.fromARGB(255, 176, 198, 146),
         body: SingleChildScrollView(
           child: Responsive(
             mobile: _mobileBody(),
@@ -80,7 +80,8 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
                           decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
                               image: DecorationImage(
-                                  image: AssetImage('govt_subsidy/supremecourt1.jpg'),
+                                  image: AssetImage(
+                                      'govt_subsidy/supremecourt1.jpg'),
                                   fit: BoxFit.fill))),
                     ),
                     Padding(
@@ -128,7 +129,8 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
                           decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
                               image: DecorationImage(
-                                  image: AssetImage('govt_subsidy/highcourt1.jpg'),
+                                  image:
+                                      AssetImage('govt_subsidy/highcourt1.jpg'),
                                   fit: BoxFit.fill))),
                     ),
                     Padding(
@@ -182,7 +184,8 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
                           decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
                               image: DecorationImage(
-                                  image: AssetImage('govt_subsidy/districtcourt1.jpg'),
+                                  image: AssetImage(
+                                      'govt_subsidy/districtcourt1.jpg'),
                                   fit: BoxFit.fill))),
                     ),
                     Padding(
@@ -230,7 +233,8 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
                           decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
                               image: DecorationImage(
-                                  image: AssetImage('govt_subsidy/lowercourt1.jpg'),
+                                  image: AssetImage(
+                                      'govt_subsidy/lowercourt1.jpg'),
                                   fit: BoxFit.fill))),
                     ),
                     Padding(
@@ -265,37 +269,7 @@ class _GovtSubsidyPageState extends State<GovtSubsidyPage> {
               style: ElevatedButton.styleFrom(
                   primary: Color(0xFF46920F),
                   padding: const EdgeInsets.all(20.0))),
-          const SizedBox(height: 50),
-          const Divider(
-            height: 20,
-            thickness: 5,
-            indent: 200,
-            endIndent: 200,
-            color: Colors.grey,
-          ),
-          const SizedBox(height: 50),
-          Container(
-            decoration: const BoxDecoration(color: Colors.black),
-            child: Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    Text('Privacy Policy',
-                        style: TextStyle(color: Colors.white38, fontSize: 20)),
-                    SizedBox(width: 50),
-                    Text('Terms & Conditions',
-                        style: TextStyle(color: Colors.white38, fontSize: 20)),
-                    SizedBox(width: 50),
-                    Text('Site Map',
-                        style: TextStyle(color: Colors.white38, fontSize: 20)),
-                    SizedBox(width: 50),
-                    Text('Contact Us',
-                        style: TextStyle(color: Colors.white38, fontSize: 20))
-                  ]),
-            ),
-          )
+          const SizedBox(height: 150),
         ],
       ),
     );

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nyayaag_client/responsive.dart';
 import 'package:nyayaag_client/screen/business_setup.dart';
 import 'package:nyayaag_client/screen/govt_subsidy.dart';
+import 'package:nyayaag_client/screen/intellectual.dart';
+import 'package:nyayaag_client/screen/ngos.dart';
+import 'package:nyayaag_client/screen/property_personal.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
 
@@ -20,7 +23,7 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
         appBar: NyayaagAppBarWidget(
           appBar: AppBar(),
         ),
-        backgroundColor: const Color.fromARGB(255, 216, 240, 203),
+        backgroundColor: const Color.fromARGB(255, 176, 198, 146),
         body: SingleChildScrollView(
           child: Responsive(
             mobile: _mobileBody(),
@@ -270,10 +273,10 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
           const SizedBox(height: 50),
           const Divider(
             height: 20,
-            thickness: 5,
+            thickness: 2,
             indent: 200,
             endIndent: 200,
-            color: Colors.grey,
+            color: Color.fromRGBO(70, 146, 15, 1),
           ),
           const SizedBox(height: 50),
           const Text('NON-LITIGATION CASES',
@@ -287,7 +290,13 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PropertyPersonalPage()),
+                  );
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -335,7 +344,13 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const IntellectualPage()),
+                  );
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -383,7 +398,12 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NgosPage()),
+                  );
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -553,15 +573,7 @@ class _LitigationCasesPageState extends State<LitigationCasesPage> {
               style: ElevatedButton.styleFrom(
                   primary: const Color(0xFF46920F),
                   padding: const EdgeInsets.all(20.0))),
-          const SizedBox(height: 50),
-          const Divider(
-            height: 20,
-            thickness: 5,
-            indent: 200,
-            endIndent: 200,
-            color: Colors.grey,
-          ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 150),
         ],
       ),
     );
