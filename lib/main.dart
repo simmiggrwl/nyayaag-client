@@ -23,8 +23,7 @@ class NyayaagApp extends StatelessWidget {
       routes: {
         '/home': (context) =>
             const HomePage(title: 'Nyayaag - Voice of Justice'),
-        '/login': (context) =>
-            const LoginPage(title: 'Nyayaag - Login'),
+        '/login': (context) => const LoginPage(title: 'Nyayaag - Login'),
         '/litigationcases': (context) => const LitigationCasesPage(),
       },
     );

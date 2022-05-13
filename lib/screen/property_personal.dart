@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:nyayaag_client/responsive.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
-import 'package:nyayaag_client/widget/bulletList.dart';
 import 'package:nyayaag_client/widget/footer.dart';
 
-class BusinessSetupPage extends StatefulWidget {
-  const BusinessSetupPage({Key? key}) : super(key: key);
+class PropertyPersonalPage extends StatefulWidget {
+  const PropertyPersonalPage({Key? key}) : super(key: key);
 
   @override
-  State<BusinessSetupPage> createState() => _BusinessSetupPageState();
+  State<PropertyPersonalPage> createState() => _PropertyPersonalPageState();
 }
 
-class _BusinessSetupPageState extends State<BusinessSetupPage> {
+class _PropertyPersonalPageState extends State<PropertyPersonalPage> {
   @override
   Widget build(context) {
     return SafeArea(
@@ -49,7 +48,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
       child: Column(
         children: [
           const SizedBox(height: 50),
-          const Text('BUSINESS SETUP CASES',
+          const Text('PROPERTY AND PERSONAL CASES',
               style: TextStyle(
                   fontSize: 60.0,
                   fontWeight: FontWeight.normal,
@@ -60,60 +59,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        SizedBox(height: 10),
-                                        Text(
-                                          'Identity and Address Proof',
-                                        ),
-                                        BulletList([
-                                          'Scanned copy of PAN Card or Passport (Foreign Nationals and NRIs)',
-                                          'Scanned copy of voter ID/Passport/Driving License',
-                                          'Scanned copy of latest bank statement/telephone or mobile bill/electricity or gas bill',
-                                          'Scanned passport sized photograph speciment signature (blank document with signature of directors only)',
-                                        ]),
-                                        SizedBox(height: 15),
-                                        Text('Registred Office Proof'),
-                                        BulletList([
-                                          'Scanned copy of the latest bank statement/telephone or mobile bill/electricity or gas bill',
-                                          'Scanned copy of no-objection certificate from the property owner',
-                                          'Scanned copy of sale deed/property deed in English(in case of owned property)'
-                                        ]),
-                                        SizedBox(height: 15),
-                                        Text(
-                                            'Note: your registerd office need not be a commercial space. It can be your residence too.'),
-                                        SizedBox(height: 15)
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -162,46 +108,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'PAN Card or Passport (Foreign Nationals or NRIs)',
-                                          'Scanned transcript of drivers license or voter\'s ID',
-                                          'Updated gas or electricity invoice/bank account statement/mobile or landline phone invoice',
-                                          'Specimen signature or impression',
-                                          'Passport size photo'
-                                        ]),
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -250,46 +157,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'Self attested copy of PAN Card',
-                                          'Self attested copy of driver\'s license/voter ID/Aadhaar card/Passport',
-                                          'Self attested copy of bank statement/telephone bill/mobile bill/electricity bill',
-                                          'Passport size photograph',
-                                          'Specimen signature certificate'
-                                        ]),
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -344,59 +212,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        SizedBox(height: 15),
-                                        Text('From partner:'),
-                                        BulletList([
-                                          'PAN Card or passport',
-                                          'Aadhar card/ voter ID/ Passport/ Driving licence',
-                                          'Latest bank statement/ telephone bill/ mobile bill/ electricity bill/ gas bill',
-                                          'Passport size photograph',
-                                          'Blank documnet with specimen signature'
-                                        ]),
-                                        SizedBox(height: 10),
-                                        Text(
-                                            'Note: one partner must self-attest the 1 st three documents in case of foreign nationals or NRI\'s all the documents must be noticed (if currently in India or a non-common wealth country) or apostilled (if from a commonwealth country)'),
-                                        SizedBox(height: 15),
-                                        Text('For the registered office: '),
-                                        BulletList([
-                                          'Utility bills',
-                                          'Notarized rental agreement in English',
-                                          'No objection certificate from the property owner',
-                                          'Sale deed/property deed in English(in case of owned property)'
-                                        ]),
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -445,50 +261,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'Application for registration of partnership (form 1)',
-                                          'Certified original copy of partnership deed',
-                                          'Specimen of an affidavit certifying are the details mentioned in the partnership deed and documents are correct',
-                                          'PAN card and address prrof of the partners',
-                                          'Proof of principal place of business of the firm'
-                                        ]),
-                                        SizedBox(height: 10),
-                                        Text(
-                                            'Note: If the documents satisfy the registrar, the firm will be entered into the register or firms and a certificate or registration will be issued.'),
-                                        SizedBox(height: 15)
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -592,48 +365,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'Applicants Aadhar card',
-                                          'Applicants PAN',
-                                          'Company PAN (Not applicable in case of a proprietorship firm)'
-                                        ]),
-                                        SizedBox(height: 10),
-                                        Text(
-                                            'Note: If the documents satisfy the registrar, the firm will be entered into the register or firms and a certificate or registration will be issued.'),
-                                        SizedBox(height: 15)
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -681,66 +413,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        SizedBox(height: 15),
-                                        Text('Private Limited Company'),
-                                        BulletList([
-                                          'Certificate of incorporation',
-                                          'PAN card of company',
-                                          'Articles of association (AOA)',
-                                          'Memorandum of association (MOA)',
-                                          'Resolution signed by board members',
-                                          'Identity and address proof of directors',
-                                          'Digital signature',
-                                          'Directors proof'
-                                        ]),
-                                        SizedBox(height: 15),
-                                        Text('LLP'),
-                                        BulletList([
-                                          'PAN card of LLP',
-                                          'LLP agreement',
-                                          'Partners name and address proof'
-                                        ]),
-                                        SizedBox(
-                                          height: 15,
-                                        ),
-                                        Text('Individual/Proprietorship'),
-                                        BulletList([
-                                          'PAN card',
-                                          'Address proof of proprietor'
-                                        ])
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -842,43 +515,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'Scope of business',
-                                          'ID proof or address proof of authorized person'
-                                        ]),
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -926,55 +563,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'An identity proof that contains a photograph',
-                                          'A passport-sized photograph'
-                                        ]),
-                                        SizedBox(height: 15),
-                                        Text('State & Central License'),
-                                        BulletList([
-                                          'Proof of address',
-                                          'A passport-sized photograph',
-                                          'A list of directors of partners',
-                                          'A certificate of incorporation',
-                                          'The MOA and AOA of the business',
-                                          'An identity proof that contains a photograph',
-                                          'No objection certificate from one local community',
-                                          'Self declaration will be prepared by us and shared for signature'
-                                        ])
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -1022,46 +611,7 @@ class _BusinessSetupPageState extends State<BusinessSetupPage> {
               ),
               const SizedBox(width: 80),
               ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      constraints:
-                          const BoxConstraints(maxWidth: double.infinity),
-                      backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return Wrap(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15)),
-                                ),
-                                child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 30),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        BulletList([
-                                          'PAN card of the company (not applicable in case of the proprietor)',
-                                          'Applicants PAN & Adhaar card (driving license & Adhaar)',
-                                          'Incorporation certificate/Partnership deed',
-                                          'Address proof (Electricity bill/ rental agreement/ sale deed of the location)',
-                                          'Copy of cancelled cheque leaf/ banker certificate of the current account in the name of the company'
-                                        ]),
-                                      ],
-                                    )),
-                              ),
-                            ),
-                          ],
-                        );
-                      });
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(

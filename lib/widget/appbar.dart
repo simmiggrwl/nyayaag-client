@@ -14,7 +14,10 @@ class NyayaagAppBarWidget extends StatelessWidget
       title: SizedBox(
         width: 70,
         height: 80,
-        child: Image.asset('logo/nyayaaglogo.png'),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Image.asset('logo/nyayaaglogo.png'),
+        ),
       ),
       actions: <Widget>[
         const SizedBox(width: 20),
@@ -32,7 +35,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Home"),
+          child: const Text(
+            "Home",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -44,7 +50,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Our Services"),
+          child: const Text(
+            "Our Services",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -56,7 +65,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Career"),
+          child: const Text(
+            "Career",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -68,7 +80,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Blog"),
+          child: const Text(
+            "Blog",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -80,7 +95,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Gallery"),
+          child: const Text(
+            "Gallery",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -97,7 +115,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Consult Expert"),
+          child: const Text(
+            "Consult Expert",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -114,7 +135,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Login/Register"),
+          child: const Text(
+            "Login/Register",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 50),
       ],
