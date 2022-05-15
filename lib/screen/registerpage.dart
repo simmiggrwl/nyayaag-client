@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
 
+import 'package:nyayaag_client/controllers/auth.dart' as auth_controller;
+
+import '../widget/bulletList.dart';
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key, required this.title}) : super(key: key);
 
@@ -17,7 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController confirmPasswordController = TextEditingController();
   TextEditingController securityAnswerController = TextEditingController();
 
-  String _dropDownValue = "";
+  String _userTypeValue = "";
   String _securityQuestionValue = "";
   @override
   Widget build(BuildContext context) {
@@ -92,9 +96,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         const SizedBox(height: 10),
                         DropdownButton<String>(
-                          hint: _dropDownValue == ""
+                          hint: _userTypeValue == ""
                               ? const Text('Please choose type of user')
-                              : Text(_dropDownValue),
+                              : Text(_userTypeValue),
                           items: <String>[' student', ' advocate', ' citizen']
                               .map((String value) {
                             return DropdownMenuItem<String>(
@@ -105,7 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           onChanged: (value) {
                             setState(
                               () {
-                                _dropDownValue = value!;
+                                _userTypeValue = value!;
                               },
                             );
                           },
@@ -147,13 +151,58 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(height: 15),
                   ElevatedButton(
                     onPressed: () {
-                      print(emailController.text);
-                      print(passwordController.text);
-                      print(_dropDownValue);
-                      print(_securityQuestionValue);
-                      print(securityAnswerController.text);
+                      auth_controller.Auth.registerUser(
+                          emailController.text,
+                          passwordController.text,
+                          confirmPasswordController.text,
+                          _securityQuestionValue,
+                          securityAnswerController.text,
+                          _userTypeValue);
+                      showModalBottomSheet(
+                          constraints:
+                              const BoxConstraints(maxWidth: double.infinity),
+                          backgroundColor: Color.fromARGB(255, 227, 255, 188),
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (context) {
+                            return Wrap(
+                              children: [
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width,
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(15),
+                                          topRight: Radius.circular(15)),
+                                    ),
+                                    child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 10, horizontal: 30),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: const [
+                                            BulletList([
+                                              'Applicants name',
+                                              'Business Type',
+                                              'Business of objectives',
+                                              'Brand/logo/slogan name',
+                                              'Registration Address',
+                                              'Signed form-4',
+                                              'Identification proof of the signatory',
+                                              'Address proof of the signatory',
+                                              'Business proof (depends on the type of business)',
+                                              'Udyog Adhaar/ MSME registration certificate (optional)'
+                                            ]),
+                                          ],
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            );
+                          });
                     },
-                    child: const Text('Login'),
+                    child: const Text('Register'),
                   ),
                   const SizedBox(height: 50),
                 ],

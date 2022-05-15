@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:nyayaag_client/screen/homepage.dart';
 import 'package:nyayaag_client/screen/litigation_cases.dart';
 import 'package:nyayaag_client/screen/registerpage.dart';
+import 'package:nyayaag_client/screen/loginpage.dart';
 
 void main() async {
   setUrlStrategy(PathUrlStrategy());
@@ -27,6 +28,7 @@ class NyayaagApp extends StatelessWidget {
             const HomePage(title: 'Nyayaag - Voice of Justice'),
         '/register': (context) =>
             const RegisterPage(title: 'Nyayaag - Register'),
+        '/login': (context) => const LoginPage(title: 'Nyayaag - Login'),
         '/litigationcases': (context) => const LitigationCasesPage(),
       },
     );
