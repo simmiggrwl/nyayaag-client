@@ -12,11 +12,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController mobileController = TextEditingController();
+  TextEditingController securityAnswerController = TextEditingController();
+
+  String _dropDownValue = "";
+  String _securityQuestionValue = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +30,8 @@ class _LoginPageState extends State<LoginPage> {
             const BoxDecoration(color: Color.fromARGB(255, 176, 198, 146)),
         child: Row(
           children: <Widget>[
-            Container(
-              child: Image.asset(
-                'design/logindesign.png',
-              ),
+            Image.asset(
+              'design/logindesign.png',
             ),
             Expanded(
               child: Column(
@@ -60,32 +60,16 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 25),
                   Container(
-                    margin: const EdgeInsets.only(right: 500, left: 500),
+                    margin: const EdgeInsets.only(right: 550, left: 550),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         TextField(
-                          controller: nameController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'User Name',
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        TextField(
                           controller: emailController,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Email Address',
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        TextField(
-                          controller: mobileController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Mobile Number',
+                            labelText: 'Email',
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -106,14 +90,68 @@ class _LoginPageState extends State<LoginPage> {
                             labelText: 'ConfirmPassword',
                           ),
                         ),
+                        const SizedBox(height: 10),
+                        DropdownButton<String>(
+                          hint: _dropDownValue == ""
+                              ? const Text('Please choose type of user')
+                              : Text(_dropDownValue),
+                          items: <String>[' student', ' advocate', ' citizen']
+                              .map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            setState(
+                              () {
+                                _dropDownValue = value!;
+                              },
+                            );
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        DropdownButton<String>(
+                          hint: _securityQuestionValue == ""
+                              ? const Text('Choose security question')
+                              : Text(_securityQuestionValue),
+                          items: <String>[
+                            ' Name of your pet?',
+                            ' Name of city where you were born?',
+                            ' Your favorite'
+                          ].map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            setState(
+                              () {
+                                _securityQuestionValue = value!;
+                              },
+                            );
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: securityAnswerController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Security Answer',
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 15),
                   ElevatedButton(
                     onPressed: () {
-                      print(nameController.text);
+                      print(emailController.text);
                       print(passwordController.text);
+                      print(_dropDownValue);
+                      print(_securityQuestionValue);
+                      print(securityAnswerController.text);
                     },
                     child: const Text('Login'),
                   ),
