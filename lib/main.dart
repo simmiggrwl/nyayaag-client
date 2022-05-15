@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:nyayaag_client/screen/homepage.dart';
 import 'package:nyayaag_client/screen/litigation_cases.dart';
 import 'package:nyayaag_client/screen/registerpage.dart';
 
-void main() {
+void main() async {
   setUrlStrategy(PathUrlStrategy());
+  await dotenv.load(fileName: ".env");
   runApp(const NyayaagApp());
 }
 
