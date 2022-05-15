@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nyayaag_client/screen/loginpage.dart';
+import 'package:nyayaag_client/screen/registerpage.dart';
 import 'package:nyayaag_client/screen/homepage.dart';
 
 class NyayaagAppBarWidget extends StatelessWidget
@@ -107,7 +107,7 @@ class NyayaagAppBarWidget extends StatelessWidget
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                      const LoginPage(title: 'Nyayaag - Citizen Login')),
+                      const RegisterPage(title: 'Nyayaag - Citizen Login')),
             );
           },
           style: TextButton.styleFrom(
@@ -127,7 +127,7 @@ class NyayaagAppBarWidget extends StatelessWidget
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                      const LoginPage(title: 'Nyayaag - Citizen Login')),
+                      const RegisterPage(title: 'Nyayaag - Register')),
             );
           },
           style: TextButton.styleFrom(

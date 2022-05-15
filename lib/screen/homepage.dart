@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
-import 'package:nyayaag_client/screen/loginpage.dart';
+import 'package:nyayaag_client/screen/registerpage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -80,8 +80,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const LoginPage(
-                                          title: 'Nyayaag - Advocate Login')),
+                                      builder: (context) => const RegisterPage(
+                                          title: 'Nyayaag - Register')),
                                 );
                               },
                               style: ElevatedButton.styleFrom(
@@ -122,8 +122,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const LoginPage(
-                                          title: 'Nyayaag - Citizen Login')),
+                                      builder: (context) => const RegisterPage(
+                                          title: 'Nyayaag - Register')),
                                 );
                               },
                               style: ElevatedButton.styleFrom(

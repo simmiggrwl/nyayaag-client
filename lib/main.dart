@@ -3,7 +3,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'package:nyayaag_client/screen/homepage.dart';
 import 'package:nyayaag_client/screen/litigation_cases.dart';
-import 'package:nyayaag_client/screen/loginpage.dart';
+import 'package:nyayaag_client/screen/registerpage.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
@@ -23,7 +23,8 @@ class NyayaagApp extends StatelessWidget {
       routes: {
         '/home': (context) =>
             const HomePage(title: 'Nyayaag - Voice of Justice'),
-        '/login': (context) => const LoginPage(title: 'Nyayaag - Login'),
+        '/register': (context) =>
+            const RegisterPage(title: 'Nyayaag - Register'),
         '/litigationcases': (context) => const LitigationCasesPage(),
       },
     );
