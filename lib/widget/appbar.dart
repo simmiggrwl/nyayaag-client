@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nyayaag_client/screen/loginpage.dart';
 import 'package:nyayaag_client/screen/registerpage.dart';
 import 'package:nyayaag_client/screen/homepage.dart';
+import 'package:nyayaag_client/screen/services.dart';
 
 class NyayaagAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -43,7 +45,10 @@ class NyayaagAppBarWidget extends StatelessWidget
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OurServicesPage()),
+            );
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -107,7 +112,7 @@ class NyayaagAppBarWidget extends StatelessWidget
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                      const RegisterPage(title: 'Nyayaag - Citizen Login')),
+                      const LoginPage(title: 'Nyayaag - Login')),
             );
           },
           style: TextButton.styleFrom(
@@ -116,7 +121,7 @@ class NyayaagAppBarWidget extends StatelessWidget
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
           child: const Text(
-            "Consult Expert",
+            "Login",
             style: TextStyle(fontSize: 16),
           ),
         ),
@@ -136,7 +141,7 @@ class NyayaagAppBarWidget extends StatelessWidget
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
           child: const Text(
-            "Login/Register",
+            "Register",
             style: TextStyle(fontSize: 16),
           ),
         ),

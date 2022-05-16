@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:nyayaag_client/responsive.dart';
-import 'package:nyayaag_client/screen/business_setup.dart';
-import 'package:nyayaag_client/screen/govt_subsidy.dart';
-import 'package:nyayaag_client/screen/intellectual.dart';
-import 'package:nyayaag_client/screen/ngos.dart';
-import 'package:nyayaag_client/screen/property_personal.dart';
+import 'package:nyayaag_client/screen/nonlitigation/business_setup.dart';
+import 'package:nyayaag_client/screen/nonlitigation/govt_subsidy.dart';
+import 'package:nyayaag_client/screen/nonlitigation/intellectual.dart';
+import 'package:nyayaag_client/screen/nonlitigation/ngos.dart';
+import 'package:nyayaag_client/screen/nonlitigation/property_personal.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
 
-class LitigationCasesPage extends StatefulWidget {
-  const LitigationCasesPage({Key? key}) : super(key: key);
+class OurServicesPage extends StatefulWidget {
+  const OurServicesPage({Key? key}) : super(key: key);
 
   @override
-  State<LitigationCasesPage> createState() => _LitigationCasesPageState();
+  State<OurServicesPage> createState() => _OurServicesPageState();
 }
 
-class _LitigationCasesPageState extends State<LitigationCasesPage> {
+class _OurServicesPageState extends State<OurServicesPage> {
   @override
   Widget build(context) {
     return SafeArea(

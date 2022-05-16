@@ -3,7 +3,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:nyayaag_client/screen/homepage.dart';
-import 'package:nyayaag_client/screen/litigation_cases.dart';
+import 'package:nyayaag_client/screen/services.dart';
 import 'package:nyayaag_client/screen/registerpage.dart';
 import 'package:nyayaag_client/screen/loginpage.dart';
 
@@ -29,7 +29,7 @@ class NyayaagApp extends StatelessWidget {
         '/register': (context) =>
             const RegisterPage(title: 'Nyayaag - Register'),
         '/login': (context) => const LoginPage(title: 'Nyayaag - Login'),
-        '/litigationcases': (context) => const LitigationCasesPage(),
+        '/services': (context) => const OurServicesPage(),
       },
     );
   }
