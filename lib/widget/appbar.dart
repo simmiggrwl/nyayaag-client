@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nyayaag_client/screen/loginpage.dart';
-import 'package:nyayaag_client/screen/registerpage.dart';
-import 'package:nyayaag_client/screen/homepage.dart';
-import 'package:nyayaag_client/screen/services.dart';
 
 class NyayaagAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -25,12 +21,7 @@ class NyayaagAppBarWidget extends StatelessWidget
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const HomePage(title: 'Nyayaag - Voice of Justice')),
-            );
+            Navigator.pushReplacementNamed(context, '/home');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -45,10 +36,7 @@ class NyayaagAppBarWidget extends StatelessWidget
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const OurServicesPage()),
-            );
+            Navigator.pushReplacementNamed(context, '/services');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -108,12 +96,7 @@ class NyayaagAppBarWidget extends StatelessWidget
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const LoginPage(title: 'Nyayaag - Login')),
-            );
+            Navigator.pushReplacementNamed(context, '/login');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -128,12 +111,7 @@ class NyayaagAppBarWidget extends StatelessWidget
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const RegisterPage(title: 'Nyayaag - Register')),
-            );
+            Navigator.pushReplacementNamed(context, '/register');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,

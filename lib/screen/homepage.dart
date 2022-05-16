@@ -77,12 +77,8 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(fontSize: 18),
                               ),
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const RegisterPage(
-                                          title: 'Nyayaag - Register')),
-                                );
+                                Navigator.pushReplacementNamed(
+                                    context, '/register');
                               },
                               style: ElevatedButton.styleFrom(
                                   primary: Color(0xFF46920F),
@@ -119,12 +115,8 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(fontSize: 18),
                               ),
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const RegisterPage(
-                                          title: 'Nyayaag - Register')),
-                                );
+                                Navigator.pushReplacementNamed(
+                                    context, '/register');
                               },
                               style: ElevatedButton.styleFrom(
                                   primary: Color(0xFF46920F),
