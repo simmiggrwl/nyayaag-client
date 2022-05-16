@@ -6,6 +6,8 @@ import 'package:nyayaag_client/screen/homepage.dart';
 import 'package:nyayaag_client/screen/services.dart';
 import 'package:nyayaag_client/screen/registerpage.dart';
 import 'package:nyayaag_client/screen/loginpage.dart';
+import 'package:nyayaag_client/screen/details/student_details.dart';
+import 'package:nyayaag_client/screen/details/advocate_details.dart';
 
 void main() async {
   setUrlStrategy(PathUrlStrategy());
@@ -30,6 +32,8 @@ class NyayaagApp extends StatelessWidget {
             const RegisterPage(title: 'Nyayaag - Register'),
         '/login': (context) => const LoginPage(title: 'Nyayaag - Login'),
         '/services': (context) => const OurServicesPage(),
+        '/student/update': (context) => const StudentUpdate(title: 'Student Update'),
+        '/advocate/update': (context) => const AdvocateUpdate(title: 'Advocate Update'),
       },
     );
   }

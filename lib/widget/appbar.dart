@@ -81,7 +81,7 @@ class NyayaagAppBarWidget extends StatelessWidget
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.pushReplacementNamed(context, '/student/update');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
@@ -89,7 +89,22 @@ class NyayaagAppBarWidget extends StatelessWidget
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
           child: const Text(
-            "Gallery",
+            "Student",
+            style: TextStyle(fontSize: 16),
+          ),
+        ),
+        const SizedBox(width: 20),
+        TextButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, '/advocate/update');
+          },
+          style: TextButton.styleFrom(
+              primary: Colors.white,
+              fixedSize: const Size(150, 75),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+          child: const Text(
+            "Advocate",
             style: TextStyle(fontSize: 16),
           ),
         ),
@@ -105,21 +120,6 @@ class NyayaagAppBarWidget extends StatelessWidget
                   borderRadius: BorderRadius.circular(10))),
           child: const Text(
             "Login",
-            style: TextStyle(fontSize: 16),
-          ),
-        ),
-        const SizedBox(width: 20),
-        TextButton(
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, '/register');
-          },
-          style: TextButton.styleFrom(
-              primary: Colors.white,
-              fixedSize: const Size(150, 75),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
-          child: const Text(
-            "Register",
             style: TextStyle(fontSize: 16),
           ),
         ),
