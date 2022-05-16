@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
 
-import 'package:nyayaag_client/controllers/auth.dart'
-    as auth_controller;
+import 'package:nyayaag_client/controllers/auth.dart' as auth_controller;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key, required this.title}) : super(key: key);
@@ -18,6 +17,14 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  final snackBarSuccess = const SnackBar(
+    content: Text('Login Successful'),
+    backgroundColor: Colors.green,
+  );
+  final snackBarFailed = const SnackBar(
+    content: Text('Failed to login'),
+    backgroundColor: Colors.red,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,8 +95,16 @@ class _LoginPageState extends State<LoginPage> {
                   ElevatedButton(
                     onPressed: () {
                       auth_controller.Auth.loginUser(
-                          emailController.text,
-                          passwordController.text);
+                              emailController.text, passwordController.text)
+                          .then((response) {
+                        if (response == 200) {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(snackBarSuccess);
+                        } else {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(snackBarFailed);
+                        }
+                      });
                     },
                     child: const Text('Login'),
                   ),

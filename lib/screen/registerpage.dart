@@ -4,8 +4,6 @@ import 'package:nyayaag_client/widget/footer.dart';
 
 import 'package:nyayaag_client/controllers/auth.dart' as auth_controller;
 
-import '../widget/bulletList.dart';
-
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key, required this.title}) : super(key: key);
 
@@ -20,9 +18,38 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   TextEditingController securityAnswerController = TextEditingController();
+  TextEditingController otpController = TextEditingController();
+
+  final snackBarOTPSuccess = const SnackBar(
+    content: Text('Registered Successfully, Enter OTP'),
+    backgroundColor: Colors.green,
+  );
+  final snackBarVerifySuccess = const SnackBar(
+    content: Text('Registered Successfully!! Proceed to login.'),
+    backgroundColor: Colors.green,
+  );
+  final snackBarFailed = const SnackBar(
+    content: Text('Failed, enter the correct details!'),
+    backgroundColor: Colors.red,
+  );
 
   String _userTypeValue = "";
   String _securityQuestionValue = "";
+
+  bool isVerifyOtpVisisble = false;
+
+  enableOTPContainer() {
+    setState(() {
+      isVerifyOtpVisisble = true;
+    });
+  }
+
+  disableOTPContainer() {
+    setState(() {
+      isVerifyOtpVisisble = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,6 +172,14 @@ class _RegisterPageState extends State<RegisterPage> {
                             labelText: 'Security Answer',
                           ),
                         ),
+                        const SizedBox(height: 15),
+                        TextField(
+                          controller: otpController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Enter OTP',
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -152,59 +187,47 @@ class _RegisterPageState extends State<RegisterPage> {
                   ElevatedButton(
                     onPressed: () {
                       auth_controller.Auth.registerUser(
-                          emailController.text,
-                          passwordController.text,
-                          confirmPasswordController.text,
-                          _securityQuestionValue,
-                          securityAnswerController.text,
-                          _userTypeValue);
-                      showModalBottomSheet(
-                          constraints:
-                              const BoxConstraints(maxWidth: double.infinity),
-                          backgroundColor: Color.fromARGB(255, 227, 255, 188),
-                          isScrollControlled: true,
-                          context: context,
-                          builder: (context) {
-                            return Wrap(
-                              children: [
-                                SizedBox(
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(15),
-                                          topRight: Radius.circular(15)),
-                                    ),
-                                    child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10, horizontal: 30),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: const [
-                                            BulletList([
-                                              'Applicants name',
-                                              'Business Type',
-                                              'Business of objectives',
-                                              'Brand/logo/slogan name',
-                                              'Registration Address',
-                                              'Signed form-4',
-                                              'Identification proof of the signatory',
-                                              'Address proof of the signatory',
-                                              'Business proof (depends on the type of business)',
-                                              'Udyog Adhaar/ MSME registration certificate (optional)'
-                                            ]),
-                                          ],
-                                        )),
-                                  ),
-                                ),
-                              ],
-                            );
-                          });
+                              emailController.text,
+                              passwordController.text,
+                              confirmPasswordController.text,
+                              _securityQuestionValue,
+                              securityAnswerController.text,
+                              _userTypeValue)
+                          .then((response) {
+                        if (response == 201) {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(snackBarOTPSuccess);
+                          enableOTPContainer();
+                        } else {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(snackBarFailed);
+                        }
+                      });
                     },
                     child: const Text('Register'),
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 15),
+                  Column(children: [
+                    Visibility(
+                      visible: isVerifyOtpVisisble,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          auth_controller.Auth.verifyOTP(
+                                  emailController.text, otpController.text)
+                              .then((response) {
+                            if (response == 200) {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBarVerifySuccess);
+                            } else {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBarFailed);
+                            }
+                          });
+                        },
+                        child: const Text('Verify OTP'),
+                      ),
+                    )
+                  ])
                 ],
               ),
             ),
