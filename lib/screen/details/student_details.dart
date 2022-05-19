@@ -2,27 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:nyayaag_client/widget/appbar.dart';
 import 'package:nyayaag_client/widget/footer.dart';
 
-import 'package:nyayaag_client/controllers/auth.dart' as auth_controller;
+import 'package:nyayaag_client/controllers/update.dart' as update_controller;
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key, required this.title}) : super(key: key);
+class StudentUpdate extends StatefulWidget {
+  const StudentUpdate({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<StudentUpdate> createState() => _StudentUpdateState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+class _StudentUpdateState extends State<StudentUpdate> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController collegeController = TextEditingController();
+  TextEditingController rollnoController = TextEditingController();
+  TextEditingController courseController = TextEditingController();
+  TextEditingController courseDurationController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController pincodeController = TextEditingController();
 
   final snackBarSuccess = const SnackBar(
-    content: Text('Login Successful'),
+    content: Text('Update Successful'),
     backgroundColor: Colors.green,
   );
   final snackBarFailed = const SnackBar(
-    content: Text('Failed to login'),
+    content: Text('Can not update information'),
     backgroundColor: Colors.red,
   );
   @override
@@ -58,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 15),
                   const Text(
-                    'Sign in to your account!',
+                    'Update your information!',
                     style: TextStyle(
                         color: Color.fromARGB(255, 13, 84, 15),
                         fontWeight: FontWeight.w500,
@@ -72,30 +77,74 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         TextField(
-                          controller: emailController,
+                          controller: nameController,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Email',
+                            labelText: 'Name',
                           ),
                         ),
                         const SizedBox(height: 10),
                         TextField(
-                          obscureText: true,
-                          controller: passwordController,
+                          controller: collegeController,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Password',
+                            labelText: 'Name of college',
                           ),
                         ),
                         const SizedBox(height: 10),
+                        TextField(
+                          controller: rollnoController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Roll No',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: courseController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Course',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: courseDurationController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Course duration',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: addressController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Address',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          controller: pincodeController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Pincode',
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 15),
                   ElevatedButton(
                     onPressed: () {
-                      auth_controller.Auth.loginUser(
-                              emailController.text, passwordController.text)
+                      update_controller.Update.student(
+                              nameController.text,
+                              collegeController.text,
+                              rollnoController.text,
+                              courseController.text,
+                              courseDurationController.text,
+                              addressController.text,
+                              pincodeController.text)
                           .then((response) {
                         if (response == 200) {
                           ScaffoldMessenger.of(context)
@@ -106,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       });
                     },
-                    child: const Text('Login'),
+                    child: const Text('Update Details'),
                   ),
                   const SizedBox(height: 50),
                 ],

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nyayaag_client/screen/loginpage.dart';
-import 'package:nyayaag_client/screen/homepage.dart';
 
 class NyayaagAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -14,25 +12,41 @@ class NyayaagAppBarWidget extends StatelessWidget
       title: SizedBox(
         width: 70,
         height: 80,
-        child: Image.asset('logo/nyayaaglogo.png'),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Image.asset('logo/nyayaaglogo.png'),
+        ),
       ),
       actions: <Widget>[
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const HomePage(title: 'Nyayaag - Voice of Justice')),
-            );
+            Navigator.pushReplacementNamed(context, '/home');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Home"),
+          child: const Text(
+            "Home",
+            style: TextStyle(fontSize: 16),
+          ),
+        ),
+        const SizedBox(width: 20),
+        TextButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, '/services');
+          },
+          style: TextButton.styleFrom(
+              primary: Colors.white,
+              fixedSize: const Size(150, 75),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+          child: const Text(
+            "Our Services",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -44,7 +58,10 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Our Services"),
+          child: const Text(
+            "Career",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
@@ -56,65 +73,55 @@ class NyayaagAppBarWidget extends StatelessWidget
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Career"),
+          child: const Text(
+            "Blog",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.pushReplacementNamed(context, '/student/update');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Blog"),
+          child: const Text(
+            "Student",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            debugPrint('Received click');
+            Navigator.pushReplacementNamed(context, '/advocate/update');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Gallery"),
+          child: const Text(
+            "Advocate",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 20),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const LoginPage(title: 'Nyayaag - Citizen Login')),
-            );
+            Navigator.pushReplacementNamed(context, '/login');
           },
           style: TextButton.styleFrom(
               primary: Colors.white,
               fixedSize: const Size(150, 75),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          child: const Text("Consult Expert"),
-        ),
-        const SizedBox(width: 20),
-        TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const LoginPage(title: 'Nyayaag - Citizen Login')),
-            );
-          },
-          style: TextButton.styleFrom(
-              primary: Colors.white,
-              fixedSize: const Size(150, 75),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
-          child: const Text("Login/Register"),
+          child: const Text(
+            "Login",
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         const SizedBox(width: 50),
       ],
